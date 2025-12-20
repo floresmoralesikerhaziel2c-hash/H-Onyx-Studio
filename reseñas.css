@@ -1,0 +1,305 @@
+/* =========================
+   FUENTES
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono:wght@400;700&display=swap');
+
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY (SIN GRADIENTE)
+========================= */
+body {
+    background-color: #020617; /* azul casi negro */
+    color: #e5e7eb;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+   CONTENEDOR SUPERIOR (HEADER)
+========================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    z-index: 100;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido interno (el nav) */
+    padding: 22px 0; /* Mantiene el padding vertical */
+    background: transparent;
+}
+
+/* =========================
+   NAV SUPERIOR (Dentro del header)
+========================= */
+nav {
+    display: flex;
+    gap: 32px; /* Espaciado entre los enlaces */
+    /* El nav ahora es un contenedor flex que se centra dentro del header */
+}
+
+/* links del nav */
+nav a {
+    position: relative;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: #c7d2fe;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+/* underline hacker */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background-color: #00e5ff;
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #00e5ff;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   CONTENIDO DESPUÉS DEL VIDEO
+========================= */
+.content {
+    background: linear-gradient(
+        180deg,
+        #021417 0%,
+        #021b24 40%,
+        #020617 100%
+    );
+    padding: 120px 10%;
+}
+
+/* títulos */
+h2, h3, h4 {
+    font-family: 'Roboto Mono', monospace;
+    color: #e5e7eb;
+    margin-bottom: 20px;
+}
+
+/* párrafos */
+p {
+    line-height: 1.7;
+    max-width: 900px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background-color: #020204;
+    padding: 40px 0;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE (MÓVIL)
+========================= */
+@media (max-width: 768px) {
+
+    .hero h1 {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    nav {
+        gap: 20px;
+        padding: 18px 0;
+    }
+
+    /* fallback móvil */
+    .hero video {
+        display: none;
+    }
+
+    .hero {
+        background-image: url("img/portada.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+
+/*BOTONES*/
+.boton {
+    display: inline-block;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    color: #00e5ff;
+    padding: 12px 28px;
+
+    border: 1px solid rgba(0, 229, 255, 0.5);
+    border-radius: 6px;
+
+    background: transparent;
+    transition: all 0.3s ease;
+   display: block;
+    margin: 40px auto;
+    width: fit-content;
+
+}
+
+
+.boton:hover {
+    color: #020617;
+    background: linear-gradient(
+        90deg,
+        #00e5ff,
+        #00ffcc
+    );
+    box-shadow: 0 0 14px rgba(0, 229, 255, 0.6);
+}
+
+
+.boton:active {
+    transform: scale(0.96);
+}
+
+
+/* Fondo y tipografía general */
+body {
+    background-color: #020617; /* fondo oscuro tipo ONYX */
+    color: #00e5ff; /* color principal neón */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Títulos */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #00e5ff;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: semi-bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Contenedor de reseñas */
+#reviews {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Cada reseña */
+.review {
+    background-color: #1a1c2a; /* ligeramente más claro que el body */
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 229, 255, 0.4);
+}
+
+.review strong {
+    color: #00e5ff; /* nombre en neón */
+}
+
+/* Formulario */
+form {
+    width: 100%;
+    max-width: 600px;
+    background-color: #1a1c2a;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Inputs y textarea */
+input[type="text"], textarea, select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    border: 2px solid rgba(0,229,255,0.3);
+    background-color: #0f111a;
+    color: #00e5ff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+input[type="text"]:focus, textarea:focus, select:focus {
+    border-color: #00e5ff;
+    box-shadow: 0 0 10px rgba(0,229,255,0.4);
+}
+
+/* Botón */
+button {
+    background-color: #00e5ff;
+    color: #0f111a;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #00bcd4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,229,255,0.4);
+}
+
+/* Placeholder */
+input::placeholder, textarea::placeholder {
+    color: rgba(0, 229, 255, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    body {
+        padding: 1rem;
+    }
+
+    form, #reviews {
+        width: 100%;
+    }
+}

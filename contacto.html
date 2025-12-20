@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto - ONYX · IH Studio </title>
+    <link rel="stylesheet" href="contacto.css">
+    <link rel="shortcut icon" href="Onyx IH Studio.jpg" type="icon">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              onyx: "#020617",
+              neon: "#00e5ff"
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="portafolio.html">Portafolio</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="reseñas.html">Reseñas</a>
+    </nav>
+</header>
+
+<div class="max-w-md mx-auto mt-8 text-center text-cyan-200 space-y-2">
+    <h1 class="text-3xl font-bold">Contacto a ONYX · IH Studio</h1>
+    <h3 class="text-lg">¡Hola! Gracias por interesarte en uno de los servicios de ONYX · IH Studio, a continuación podrás dejarme tu correo de Gmail para contactarte, o bien, puedes seleccionar el Servicio que desees y dejarme una descripcion de lo que quieras con un metodo de contacto, de esa forma podremos estar en contacto y hacer tu sercivio!</h3>
+    <h2 class="text-xl font-semibold mt-4">Realizar Pedido</h2>
+</div>
+
+<!-- INPUT DE GMAIL -->
+<form action="https://formspree.io/f/maqwqrjo" method="POST" class="max-w-md mx-auto mt-4">
+  <label class="text-cyan-200">Tu Gmail:</label>
+  <div class="relative">
+    <input 
+      name="user_email"
+      type="email" 
+      placeholder="Déjame tu Gmail y te escribire!" 
+      required
+      class="w-full rounded-md p-3 pr-28 bg-slate-950 text-cyan-200 border border-cyan-500/20 focus:outline-none focus:ring-1 focus:ring-cyan-400"
+    >
+    <span class="absolute right-3 top-1/2 -translate-y-1/2 text-cyan-400">@gmail.com</span>
+  </div>
+  <button type="submit" class="mt-3 w-full py-3 border border-cyan-400 rounded-md text-neon hover:bg-cyan-400 hover:text-slate-950 transition">
+    Enviar correo
+  </button>
+</form>
+
+
+<!-- FORMULARIO CENTRADO -->
+<div class="flex justify-center mt-6 mb-12">
+  <form
+    action="https://formspree.io/f/xvzpznzv"
+    method="POST"
+    class="w-[340px] bg-slate-900 border border-cyan-500/20 rounded-xl p-6 space-y-5 shadow-xl"
+  >
+
+    <h2 class="text-xl font-semibold text-center text-neon">
+      Solicitar servicio
+    </h2>
+
+    <!-- SELECTOR DE SERVICIO -->
+    <div class="flex flex-col gap-3">
+
+      <!-- HTML -->
+      <label
+        for="html"
+        class="font-medium h-14 relative hover:bg-slate-800 flex items-center px-3 gap-3 rounded-lg
+        has-[:checked]:text-neon
+        has-[:checked]:bg-cyan-500/10
+        has-[:checked]:ring-cyan-400
+        has-[:checked]:ring-1
+        select-none"
+      >
+        <span>HTML</span>
+        <input
+          checked
+          type="radio"
+          name="servicio"
+          value="HTML"
+          id="html"
+          class="absolute right-3 w-4 h-4 accent-cyan-400"
+        />
+      </label>
+
+      <!-- PYTHON -->
+      <label
+        for="Python"
+        class="font-medium h-14 relative hover:bg-slate-800 flex items-center px-3 gap-3 rounded-lg
+        has-[:checked]:text-neon
+        has-[:checked]:bg-cyan-500/10
+        has-[:checked]:ring-cyan-400
+        has-[:checked]:ring-1
+        select-none"
+      >
+        <span>Python</span>
+        <input
+          type="radio"
+          name="servicio"
+          value="Python"
+          id="Python"
+          class="absolute right-3 w-4 h-4 accent-cyan-400"
+        />
+      </label>
+
+      <!-- JavaScript -->
+      <label
+        for="javascript"
+        class="font-medium h-14 relative hover:bg-slate-800 flex items-center px-3 gap-3 rounded-lg
+        has-[:checked]:text-neon
+        has-[:checked]:bg-cyan-500/10
+        has-[:checked]:ring-cyan-400
+        has-[:checked]:ring-1
+        select-none"
+      >
+        <span>JavaScript</span>
+        <input
+          type="radio"
+          name="servicio"
+          value="JavaScript"
+          id="javascript"
+          class="absolute right-3 w-4 h-4 accent-cyan-400"
+        />
+      </label>
+
+    </div>
+
+    <!-- DESCRIPCIÓN -->
+    <textarea
+      name="descripcion"
+      placeholder="Describe tu proyecto..."
+      required
+      class="w-full min-h-[120px] bg-slate-950 border border-cyan-500/20 rounded-md p-3 text-cyan-200 focus:outline-none focus:ring-1 focus:ring-cyan-400"
+    ></textarea>
+
+    <!-- ASUNTO DEL CORREO -->
+    <input
+      type="hidden"
+      name="_subject"
+      value="Nueva solicitud desde ONYX · IH"
+    />
+
+    <!-- BOTÓN -->
+    <button
+      type="submit"
+      class="w-full py-3 border border-cyan-400 rounded-md text-neon
+      hover:bg-cyan-400 hover:text-slate-950 transition"
+    >
+      Enviar solicitud
+    </button>
+
+  </form>
+</div>
+
+</body>
+</html>

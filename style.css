@@ -1,0 +1,204 @@
+
+.contenedor-principal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 50px;
+    min-height: 100vh;
+    
+    /* TU FONDO DEGRADADO */
+    background: #0F2027; 
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    
+    /* ESTO ASEGURA QUE EL FONDO CUBRA TODA LA PANTALLA */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* --- DISEÑO GENERAL --- */
+.main-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+  background-color: #0f172a; /* Fondo para que resalte el neón */
+  font-family: sans-serif;
+}
+
+/* --- ESTILO DE TUS COMANDOS --- */
+.commands-container {
+  color: white;
+  max-width: 500px;
+  max-height: 500px; /* Para que coincida con la altura de la card */
+  overflow-y: auto;  /* Scroll si la lista es muy larga */
+  padding-right: 15px;
+}
+
+.commands-container h3 {
+  color: #00b7ff;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.commands-container h4 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin: 8px 0;
+  color: #cbd5e1;
+  border-bottom: 1px solid rgba(49, 92, 253, 0.2);
+  padding-bottom: 4px;
+}
+
+/* Personalización del scroll de comandos */
+.commands-container::-webkit-scrollbar { width: 5px; }
+.commands-container::-webkit-scrollbar-thumb { background: #315cfd; border-radius: 10px; }
+
+/* --- TU CSS DE LA TARJETA (INTACTO) --- */
+.card {
+  width: 320px;
+  height: 480px;
+  background: #07182E;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  color: white;
+  width: 100%;
+}
+
+.bot-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #315cfd;
+  margin-bottom: 15px;
+}
+
+.desc {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.btns-horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+}
+
+button {
+  width: 85px;
+  height: 40px;
+  border: 2px solid #315cfd;
+  border-radius: 25px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+button:hover {
+  background: #315cfd;
+  color: white;
+  transform: scale(1.1);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  height: 150%;
+  animation: rotBGimg 3s linear infinite;
+}
+
+@keyframes rotBGimg {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  background: #07182E;
+  inset: 4px;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+
+/*FUENTE LETRA*/
+h2, h3, h4, body {
+    font-family: 'Inter', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    color: #8b5cf6;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+
+/*BOTONES HASTA ARRIBA NAV*/   
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding: 22px 0;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: #c7d2fe; /* azul claro */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+/* línea inferior estilo hacker */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background-color: #00e5ff;
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #00e5ff;
+}
+
+nav a:hover::after {
+    width: 100%;
+}

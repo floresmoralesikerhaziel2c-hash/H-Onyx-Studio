@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio - ONYX · IH Studio</title>
+    <link rel="stylesheet" href="reseñas.css">
+    <style>
+        body { background:#020617; color:#00e5ff; font-family:sans-serif; padding:2rem; }
+        .review { background:#1a1c2a; padding:10px; margin:5px 0; border-radius:8px; }
+        .review strong { color:#00e5ff; }
+        form { background:#1a1c2a; padding:1.5rem; border-radius:12px; max-width:500px; margin-top:1rem; }
+        input, textarea, select, button { width:100%; margin-top:0.5rem; padding:0.8rem; border-radius:8px; border:none; }
+        input, textarea, select { background:#0f111a; color:#00e5ff; }
+        button { background:#00e5ff; color:#0f111a; font-weight:bold; cursor:pointer; }
+        button:hover { background:#00bcd4; }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="portafolio.html">Portafolio</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="reseñas.html">Reseñas</a>
+    </nav>
+</header>
+
+<h1>Reseñas de Usuarios</h1>
+
+<div id="reviews">
+    <!-- Las reseñas se mostrarán aquí -->
+</div>
+
+<h2>Deja tu reseña</h2>
+<form id="reviewForm">
+    <input type="text" id="name" placeholder="Tu nombre" required>
+    <textarea id="comment" placeholder="Tu comentario" required></textarea>
+    <select id="rating" required>
+        <option value="">Calificación</option>
+        <option value="1">1⭐</option>
+        <option value="2">2⭐</option>
+        <option value="3">3⭐</option>
+        <option value="4">4⭐</option>
+        <option value="5">5⭐</option>
+    </select>
+    <button type="submit">Enviar Reseña</button>
+</form>
+
+<script>
+    const reviewForm = document.getElementById('reviewForm');
+    const reviewsContainer = document.getElementById('reviews');
+    const reviews = []; // arreglo para guardar reseñas en memoria
+
+    reviewForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const comment = document.getElementById('comment').value.trim();
+        const rating = document.getElementById('rating').value;
+
+        if(!name || !comment || !rating) return;
+
+        // Crear objeto reseña
+        const review = { name, comment, rating };
+        reviews.push(review);
+
+        // Mostrar en la página
+        const div = document.createElement('div');
+        div.className = 'review';
+        div.innerHTML = `<strong>${review.name}</strong> (${review.rating}⭐): <p>${review.comment}</p>`;
+        reviewsContainer.appendChild(div);
+
+        // Limpiar formulario
+        reviewForm.reset();
+    });
+</script>
+
+</body>
+</html>
